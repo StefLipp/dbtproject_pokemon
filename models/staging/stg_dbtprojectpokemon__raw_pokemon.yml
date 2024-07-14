@@ -8,8 +8,8 @@ models:
         description: "Primary key and indexnumber of pokemon"
         tests:
           - not_null
-          - unique
-              
+          - unique:
+              severity: error
       - name: abilities
         description: "Array of Abilities for specific pokemon"
         tests:
@@ -19,6 +19,7 @@ models:
         tests:
           - not_null
       - name: base_egg_steps
+        tests:
           - not_null
       - name: base_happiness
         tests:
