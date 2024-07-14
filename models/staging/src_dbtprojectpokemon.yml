@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dbtprojectpokemon_sl
+    database: dbtpokemon  
+    schema: dbtprojectpokemon_sl
+    tables:
+      - name: raw_pokemon

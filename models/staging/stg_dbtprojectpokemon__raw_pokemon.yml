@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: stg_dbtprojectpokemon__raw_pokemon
+    description: staging
+    columns:
+      - name: pokedex_number
+        description: "Primary key and indexnumber of pokemon"
+        tests:
+          - not_null
+          - unique
+              
+      - name: abilities
+        description: "Array of Abilities for specific pokemon"
+        tests:
+          - not_null
+      - name: attack
+        description: "attack stat number"
+        tests:
+          - not_null
+      - name: base_egg_steps
+          - not_null
+      - name: base_happiness
+        tests:
+          - not_null
+      - name: base_total
+        tests:
+          - not_null
+      - name: capture_rate
+        tests:
+          - not_null
+      - name: classfication
+        tests:
+          - not_null
+      - name: defense
+        tests:
+          - not_null
+      - name: experience_growth
+        tests:
+          - not_null
+      - name: height_m
+        tests:
+          - not_null
+      - name: hp
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: percentage_male
+        tests:
+          - not_null
+      - name: sp_attack
+        tests:
+          - not_null
+      - name: sp_defense
+        tests:
+          - not_null
+      - name: speed
+        tests:
+          - not_null
+      - name: type1
+        tests:
+          - not_null
+      - name: type2
+      - name: weight_kg
+        tests:
+          - not_null
+      - name: generation
+        tests:
+          - not_null
+      - name: is_legendary
+        tests:
+          - not_null
+
