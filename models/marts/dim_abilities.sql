@@ -19,7 +19,8 @@ split_values AS (SELECT pokedex_number,
 FROM 
   split_values_temp)
 
-SELECT * FROM (SELECT pokedex_number, test1 as ability
+SELECT * FROM 
+(SELECT pokedex_number, test1 as ability
 FROM split_values
 UNION DISTINCT
 SELECT pokedex_number, test2 as ability
