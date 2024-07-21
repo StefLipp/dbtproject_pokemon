@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_abilities
-    description: "abilities dimention"
+    description: "abilities dimension"
     columns:
       - name: prim_key
         description: "primary key"

@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: fct_pokemon_characteristics
-    description: "second fact table, non battle characteristics"
+  - name: dim_pokemon_characteristics
+    description: "dimension non-battle characteristics"
     columns:
       - name: pokedex_number
         description: "Primary key and index number of pokemon in pokedex"
