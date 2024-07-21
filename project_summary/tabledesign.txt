@@ -1,0 +1,106 @@
+1. 
+- raw_pokemon -
+abilities
+against_bug
+against_dark
+against_dragon
+against_electric
+against_fairy
+against_fight
+against_fire
+against_flying
+against_ghost
+against_grass
+against_ground
+against_ice
+against_normal
+against_poison
+against_psychic
+against_rock
+against_steel
+against_water
+attack
+base_egg_steps
+base_happiness
+base_total
+capture_rate
+classfication
+defense
+experience_growth
+height_m
+hp
+japanese_name
+name
+percentage_male
+pokedex_number
+sp_attack
+sp_defense
+speed
+type1
+type2
+weight_kg
+generation
+is_legendary
+
+2.
+- raw_pokemon - Reduced
+pokedex_number
+abilities
+attack
+base_egg_steps
+base_happiness
+base_total
+capture_rate
+classfication
+defense
+experience_growth
+height_m
+hp
+name
+percentage_male
+sp_attack
+sp_defense
+speed
+type1
+type2
+weight_kg
+generation
+is_legendary
+
+3.
+- fct_pokemon_battle - FactTable
+pokedex_number (primary key)
+attack
+base_total
+defense
+hp
+sp_attack
+sp_defense
+speed
+
+- dim_pokemon_characteristics - Dimension
+pokedex_number (primary & foreign key)
+name
+base_egg_steps
+base_happiness
+capture_rate
+classfication
+experience_growth
+height_m
+percentage_male
+weight_kg
+generation
+is_legendary
+
+- dim_abilities - Dimension
+AbilityByPokemon_id (surrogate key)
+pokedex_number (foreign key)
+abilities
+
+- dim_types - Dimension
+TypeByPokemon_id (surrogate key)
+pokedex_number (foreign key)
+type (instances of type 1 or 2)
+
+4.
+OneBigTable for effective analysis
