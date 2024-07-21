@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_abilities
+    description: "abilities dimention"
+    columns:
+      - name: prim_key
+        description: "primary key"
+        tests:
+          - not_null
+          - unique
+      - name: pokedex_number
+        description: "indexnumber of pokemon in pokedex"
+        tests:
+          - not_null
+      - name: ability
+        description: "ability of pokemon, 1 ability per row"

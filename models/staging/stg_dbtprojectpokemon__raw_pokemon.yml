@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: stg_dbtprojectpokemon__raw_pokemon
+    description: staging
+    columns:
+      - name: pokedex_number
+        description: "Primary key and indexnumber of pokemon in pokedex"
+        tests:
+          - not_null
+          - unique:
+              severity: error
+      - name: abilities
+        description: "Array of Abilities for specific pokemon"
+        tests:
+          - not_null
+      - name: attack
+        description: "base attack stat number"
+        tests:
+          - not_null
+      - name: base_egg_steps
+        tests:
+          - not_null
+      - name: base_happiness
+        tests:
+          - not_null
+      - name: base_total
+        tests:
+          - not_null
+      - name: capture_rate
+        tests:
+          - not_null
+      - name: classfication
+        description: "pokedex classification type"
+        tests:
+          - not_null
+      - name: defense
+        tests:
+          - not_null
+      - name: experience_growth
+        tests:
+          - not_null
+      - name: height_m
+        description: "can be null in table since lacking data, hence unused"
+      - name: hp
+        description: "health points"
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: percentage_male
+        description: "can be null if genderless"
+      - name: sp_attack
+        description: "base special attack stat number"
+        tests:
+          - not_null
+      - name: sp_defense
+        description: "base special defence stat number"
+        tests:
+          - not_null
+      - name: speed
+        description: "base speed stat number"
+        tests:
+          - not_null
+      - name: type1
+        description: "primary type"
+        tests:
+          - not_null
+      - name: type2
+        description: "secondary type"
+      - name: weight_kg
+        description: "can be null in table since lacking data, hence unused"
+      - name: generation
+        description: "generation of pokemon games"
+        tests:
+          - not_null
+      - name: is_legendary
+        description: "1 is yes, 0 is no"
+        tests:
+          - not_null
+
