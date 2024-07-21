@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: fct_pokemon_characteristics
+    description: "second fact table, non battle characteristics"
+    columns:
+      - name: pokedex_number
+        description: "Primary key and index number of pokemon in pokedex"
+        tests:
+          - not_null
+          - unique:
+              severity: error
+      - name: name
+        tests:
+          - not_null
+      - name: base_egg_steps
+        tests:
+          - not_null
+      - name: base_happiness
+        tests:
+          - not_null
+      - name: capture_rate
+        tests:
+          - not_null
+      - name: classfication
+        description: "pokedex classification type"
+        tests:
+          - not_null
+      - name: experience_growth
+        tests:
+          - not_null
+      - name: percentage_male
+        description: "can be null if genderless"
+      - name: generation
+        description: "generation of pokemon games"
+        tests:
+          - not_null
+      - name: is_legendary
+        description: "1 is yes, 0 is no"
+        tests:
+          - not_null

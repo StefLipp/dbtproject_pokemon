@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fct_pokemon_battle
+    description: "first fact table, battle stats"
+    columns:
+      - name: pokedex_number
+        description: "Primary key and indexnumber of pokemon in pokedex"
+        tests:
+          - not_null
+          - unique:
+              severity: error
+      - name: attack
+        description: "base attack stat number"
+        tests:
+          - not_null
+      - name: base_total
+        tests:
+          - not_null
+      - name: defense
+        tests:
+          - not_null
+      - name: hp
+        description: "health points"
+        tests:
+          - not_null
+      - name: sp_attack
+        description: "base special attack stat number"
+        tests:
+          - not_null
+      - name: sp_defense
+        description: "base special defence stat number"
+        tests:
+          - not_null
+      - name: speed
+        description: "base speed stat number"
+        tests:
+          - not_null

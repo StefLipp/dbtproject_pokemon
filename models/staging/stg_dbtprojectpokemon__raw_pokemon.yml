@@ -5,7 +5,7 @@ models:
     description: staging
     columns:
       - name: pokedex_number
-        description: "Primary key and indexnumber of pokemon"
+        description: "Primary key and indexnumber of pokemon in pokedex"
         tests:
           - not_null
           - unique:
@@ -15,7 +15,7 @@ models:
         tests:
           - not_null
       - name: attack
-        description: "attack stat number"
+        description: "base attack stat number"
         tests:
           - not_null
       - name: base_egg_steps
@@ -31,6 +31,7 @@ models:
         tests:
           - not_null
       - name: classfication
+        description: "pokedex classification type"
         tests:
           - not_null
       - name: defense
@@ -40,37 +41,42 @@ models:
         tests:
           - not_null
       - name: height_m
-        tests:
-          - not_null
+        description: "can be null in table since lacking data, hence unused"
       - name: hp
+        description: "health points"
         tests:
           - not_null
       - name: name
         tests:
           - not_null
       - name: percentage_male
-        tests:
-          - not_null
+        description: "can be null if genderless"
       - name: sp_attack
+        description: "base special attack stat number"
         tests:
           - not_null
       - name: sp_defense
+        description: "base special defence stat number"
         tests:
           - not_null
       - name: speed
+        description: "base speed stat number"
         tests:
           - not_null
       - name: type1
+        description: "primary type"
         tests:
           - not_null
       - name: type2
+        description: "secondary type"
       - name: weight_kg
-        tests:
-          - not_null
+        description: "can be null in table since lacking data, hence unused"
       - name: generation
+        description: "generation of pokemon games"
         tests:
           - not_null
       - name: is_legendary
+        description: "1 is yes, 0 is no"
         tests:
           - not_null
 

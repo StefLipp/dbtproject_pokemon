@@ -8,9 +8,7 @@ base_happiness,
 capture_rate,
 classfication,
 experience_growth,
-height_m,
 percentage_male,
-weight_kg,
 generation,
 is_legendary
 FROM raw_pokemon_reduced

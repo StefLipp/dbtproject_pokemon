@@ -7,8 +7,11 @@ FROM raw_pokemon_reduced),
 type2table AS (SELECT
 pokedex_number, type2 as type
 FROM raw_pokemon_reduced
-WHERE type2 IS NOT null)
+WHERE type2 IS NOT null),
 
-SELECT * FROM type1table
+alltypestable as (SELECT * FROM type1table
 UNION DISTINCT 
-SELECT * FROM type2table
+SELECT * FROM type2table)
+
+SELECT (pokedex_number || '-' || type) as prim_key, pokedex_number, type
+FROM alltypestable

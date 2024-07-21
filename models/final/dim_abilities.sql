@@ -17,21 +17,27 @@ split_values AS (SELECT pokedex_number,
   CASE WHEN ARRAY_LENGTH(split_array) > 4 THEN split_array[OFFSET(4)] ELSE NULL END AS test5,
   CASE WHEN ARRAY_LENGTH(split_array) > 5 THEN split_array[OFFSET(5)] ELSE NULL END AS test6
 FROM 
-  split_values_temp)
-
-SELECT * FROM 
-(SELECT pokedex_number, test1 as ability
-FROM split_values
-UNION DISTINCT
-SELECT pokedex_number, test2 as ability
-FROM split_values
-UNION DISTINCT
-SELECT pokedex_number, test3 as ability
-FROM split_values
-UNION DISTINCT
-SELECT pokedex_number, test4 as ability
-FROM split_values
-UNION DISTINCT
-SELECT pokedex_number, test5 as ability
-FROM split_values)
+  split_values_temp),
+  
+combined_abilities AS (
+    SELECT pokedex_number, test1 AS ability
+    FROM split_values
+    UNION DISTINCT
+    SELECT pokedex_number, test2 AS ability
+    FROM split_values
+    UNION DISTINCT
+    SELECT pokedex_number, test3 AS ability
+    FROM split_values
+    UNION DISTINCT
+    SELECT pokedex_number, test4 AS ability
+    FROM split_values
+    UNION DISTINCT
+    SELECT pokedex_number, test5 AS ability
+    FROM split_values
+)
+SELECT 
+    (pokedex_number || '-' || ability) AS prim_key, 
+    pokedex_number, 
+    ability
+FROM combined_abilities
 WHERE ability IS NOT NULL
